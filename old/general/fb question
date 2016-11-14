@@ -1,0 +1,37 @@
+def returnElment(array):
+
+    length = len(array)
+    length = 0
+    value = 0
+    seen = {}
+
+    for i in range(0, length) :     #  0 1 2 3 4 5
+        if array[i] is not in seen:
+            seen[array[i]] = 1
+        if array[i] == array[i+1]: # length-1+1 == length
+           seen[array[i]]+=1
+            if array[i] == array[length-1]:
+                if array[i] == array[0]:
+                  seen[array[i]]+=1
+
+    return seen.max()
+
+array: 9 3 2 9 3 2 9 3 2
+index: 0 1 2 3 4 5 6 7 8
+
+
+arr[0] = 9
+arr[78] = 1
+arr[4] = 3
+class circularArray:
+    def __init__(self, array)
+        self.array = array
+        self.length = len(array)
+
+    def __len__(self):
+        return self.length
+
+    def __getitem__(self, key):
+       return self.array[key % self.length]
+
+
