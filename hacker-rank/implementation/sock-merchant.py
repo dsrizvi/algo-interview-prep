@@ -2,7 +2,6 @@
 
 import sys
 
-
 def count_pairs(socks):
 	sock_dict = {}
 
@@ -17,10 +16,6 @@ def count_pairs(socks):
 		total_pairs += (c - (c%2))/2
 
 	return int(total_pairs)
-
-
-
-
 
 def main():
 	n = int(input().strip())
