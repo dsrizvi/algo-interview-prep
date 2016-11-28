@@ -1,3 +1,5 @@
+#!/bin/python3
+
 import sys
 from operator import sub
 
@@ -12,14 +14,14 @@ def calculate_fine(return_date, due_date):
 
     diff = list(map(sub, return_date, due_date))
 
-    if diff[DAY] > 0 and diff[MONTH] == 0:
+    if diff[DAY] > 0 and diff[MONTH] == 0 and diff[YEAR] == 0:
         return diff[DAY]*DAILY_FINE
     if diff[MONTH] > 0 and diff[YEAR] == 0:
         return diff[MONTH]*MONTHLY_FINE
     if diff[YEAR] > 0:
         return YEAR_FINE
 
-    return fine
+    return 0
 
 def main():
     d1,m1,y1 = input().strip().split(' ')
